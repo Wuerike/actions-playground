@@ -26,5 +26,3 @@ jobs:
           owner: ${{ github.repository_owner }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_as: ${{ github.event.inputs.version }}
-          target_branch: master
-          pull_request_body: 123
