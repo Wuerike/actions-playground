@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/Wuerike/actions-playground/compare/v1.1.1...v1.2.0) (2022-02-01)
+
+
+### Features
+
+* feat 2 ([b7c4e44](https://github.com/Wuerike/actions-playground/commit/b7c4e446c4ad43a329c8e8f9060b8c04de4cce61))
+
+
+### Bug Fixes
+
+* update action ([9b44de2](https://github.com/Wuerike/actions-playground/commit/9b44de227476e22c2cd7972ed61508cdc264c14e))
+
 ### [1.1.1](https://github.com/Wuerike/actions-playground/compare/v1.1.0...v1.1.1) (2022-02-01)
 
 
