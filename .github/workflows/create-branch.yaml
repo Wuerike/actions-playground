@@ -13,8 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     name: Standard Version Flow Release
     steps:
+      - uses: actions/checkout@v2
+
+      - name: Configure committer
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
       - uses: peterjgrainger/action-create-branch@v2.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           branch: 'temp_branch'
+
+      - name: Bump version
+        uses: qzb/standard-version@v1
