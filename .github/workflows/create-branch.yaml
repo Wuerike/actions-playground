@@ -1,0 +1,20 @@
+name: Standard Version Flow Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'The version you want to release.'
+        required: false
+
+jobs:
+
+  create-branch:
+    runs-on: ubuntu-latest
+    name: Standard Version Flow Release
+    steps:
+      - uses: peterjgrainger/action-create-branch@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          branch: 'temp_branch'
