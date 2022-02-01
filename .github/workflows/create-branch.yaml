@@ -1,4 +1,4 @@
-name: Standard Version Flow Release
+name: create-branch
 
 on:
   workflow_dispatch:
