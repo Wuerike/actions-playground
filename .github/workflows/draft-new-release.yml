@@ -23,9 +23,7 @@ jobs:
           git config user.email noreply@github.com
 
       - name: Create release branch
-        run: |
-          git checkout develop
-          git checkout -b release/${{ steps.make-commit.outputs.version }}
+        run: git checkout -b release/${{ steps.make-commit.outputs.version }}
 
       - name: Run standard-version with input version
         id: make-commit
