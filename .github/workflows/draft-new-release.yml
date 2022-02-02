@@ -23,7 +23,7 @@ jobs:
           git config user.email noreply@github.com
 
       - name: Create release branch
-        run: git checkout -b release/${{ steps.make-commit.outputs.version }}
+        run: git checkout -b release/${{ github.event.inputs.version }}
 
       - name: Run standard-version with input version
         id: make-commit
@@ -33,7 +33,7 @@ jobs:
           echo "::set-output name=version::$(git describe)"
 
       - name: Push new branch
-        run: git push origin release/${{ steps.make-commit.outputs.version }} --follow-tags
+        run: git push origin release/${{ github.event.inputs.version }} --follow-tags
 
       - name: Create main pull request
         id: create-main-pull-request
@@ -41,10 +41,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          head: release/${{ steps.make-commit.outputs.version }}
+          head: release/${{ github.event.inputs.version }}
           base: main
           labels: main
-          title: "release/${{ steps.make-commit.outputs.version }}"
+          title: "release/${{ github.event.inputs.version }}"
           reviewers: ${{ github.actor }} # By default, we request a review from the person who triggered the workflow.
           # Write a nice message to the user.
           # We are claiming things here based on the `publish-new-release.yml` workflow.
