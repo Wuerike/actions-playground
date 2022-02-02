@@ -1,0 +1,19 @@
+name: commit-branch-check-action
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'The version you want to release.'
+        required: false
+
+jobs:
+
+  commit-branch-check-action:
+    runs-on: ubuntu-latest
+    name: commit-branch-check-action
+    steps:
+      - uses: dsayling/commit-branch-check-action@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: testando-123
