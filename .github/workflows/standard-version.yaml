@@ -15,4 +15,4 @@ jobs:
     steps:
       - uses: Wuerike/standard-version-release-branch@main
         with:
-          who-to-greet: 'Mona the Octocat'
+          who-to-greet: 'Wuerike 123 Teste'
