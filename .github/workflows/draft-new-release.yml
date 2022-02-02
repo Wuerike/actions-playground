@@ -1,0 +1,55 @@
+name: "Draft new release"
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'The version you want to release.'
+        required: true
+
+jobs:
+  draft-new-release:
+    name: "Draft a new release"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install standard-version
+        run: npm i standard-version
+
+      - name: Initialize mandatory git config
+        run: |
+          git config user.name "GitHub actions"
+          git config user.email noreply@github.com
+
+      - name: Create release branch
+        run: git checkout -b release/${{ steps.make-commit.outputs.version }}
+
+      - name: Run standard-version with input version
+        id: make-commit
+        run: |
+          npx standard-version --release-as ${{ github.event.inputs.version }} --no-verify
+          echo "::set-output name=commit::$(git rev-parse HEAD)"
+          echo "::set-output name=version::$(git describe)"
+
+      - name: Push new branch
+        run: git push origin release/${{ steps.make-commit.outputs.version }} --follow-tags
+
+      - name: Create main pull request
+        id: create-main-pull-request
+        uses: thomaseizinger/create-pull-request@1.2.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          head: release/${{ steps.make-commit.outputs.version }}
+          base: main
+          labels: main
+          title: "release/${{ steps.make-commit.outputs.version }}"
+          reviewers: ${{ github.actor }} # By default, we request a review from the person who triggered the workflow.
+          # Write a nice message to the user.
+          # We are claiming things here based on the `publish-new-release.yml` workflow.
+          # You should obviously adopt it to say the truth depending on your release workflow :)
+          body: |
+            ## Motivo da mudança
+
+            Preencha o motivo da mudança.
