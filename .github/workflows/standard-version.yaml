@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Standard Version
     steps:
+      - uses: actions/checkout@v2
+
       - uses: Wuerike/standard-version-release-branch@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
