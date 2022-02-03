@@ -14,6 +14,8 @@ jobs:
     name: Standard Version
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - uses: Wuerike/standard-version-release-branch@main
         with:
