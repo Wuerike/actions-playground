@@ -17,10 +17,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: Wuerike/standard-version-release-branch@develop
+      - uses: Wuerike/standard-version-release-branch@feat/Create-pull-request
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_version: ${{ github.event.inputs.version }}
           origin_branch: develop
           target_branch: master
-          as_draft: true
+          as_draft: 'true'
