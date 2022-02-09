@@ -15,11 +15,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: Wuerike/standard-version-release-branch@feat/Add-version-input-as-optional
+      - uses: Wuerike/standard-version-release-branch@feat/Make-follow-tags-optional
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_version: ${{ github.event.inputs.version }}
           origin_branch: develop
           target_branch: master
           as_draft: true
+          push_tag: false
           pr_template: 'PR opened by [standard-version-release-branch](https://github.com/Wuerike/standard-version-release-branch)'
