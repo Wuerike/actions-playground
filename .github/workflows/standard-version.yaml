@@ -1,26 +1,25 @@
-name: Standard Version
+name: Create Release Branch
 
 on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'The version you want to release.'
+        description: 'The version you want to release. Ex: 1.2.3'
         required: false
 
 jobs:
-
-  create-release:
+  create-release-branch:
     runs-on: ubuntu-latest
-    name: Standard Version
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
-      - uses: Wuerike/standard-version-release-branch@develop
+      - uses: Wuerike/standard-version-release-branch@feat/Add-version-input-as-optional
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_version: ${{ github.event.inputs.version }}
           origin_branch: develop
           target_branch: master
           as_draft: true
+          pr_template: 'PR opened by [standard-version-release-branch](https://github.com/Wuerike/standard-version-release-branch)'
