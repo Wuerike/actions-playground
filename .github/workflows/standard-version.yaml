@@ -17,9 +17,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: Wuerike/standard-version-release-branch@main
+      - uses: Wuerike/standard-version-release-branch@v1.2.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_version: ${{ github.event.inputs.version }}
           origin_branch: develop
-          target_branch: master
+          target_branch: main
+          as_draft: true
+          push_tag: false
