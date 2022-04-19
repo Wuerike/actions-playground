@@ -22,6 +22,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_version: ${{ github.event.inputs.version }}
           origin_branch: develop
-          target_branch: main
+          target_branch: master
           as_draft: true
           push_tag: false
