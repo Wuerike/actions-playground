@@ -5,7 +5,7 @@ on: workflow_dispatch
 jobs:
   release:
     name: Publish new release
-    runs-on: ubuntu-latest    
+    runs-on: ubuntu-latest
     steps:     
       - name: Extract change reason from pull request body 
         uses: actions-ecosystem/action-regex-match@v2.0.2
@@ -93,6 +93,8 @@ jobs:
 
       - name: Print extracted results
         run: |
-          echo |
-            ## Motivo da mudança ${{ steps.change-reason-regex.outputs.group1 }}
-            ## Links das demandas que estão sendo resolvidas com a mudança ${{ steps.card-link-regex.outputs.group1 }}
+          echo "## Motivo da mudança" 
+          echo "${{ steps.change-reason-regex.outputs.group1 }}"
+
+          echo "## Links das demandas que estão sendo resolvidas com a mudança" 
+          echo "${{ steps.card-link-regex.outputs.group1 }}"
