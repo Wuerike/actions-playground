@@ -5,8 +5,6 @@ on: workflow_dispatch
 jobs:
   release:
     name: Publish new release
-    env:
-      GCP_PROJECT_ID: si26ef9dii9zscrxrecql6kl8eguw2
     runs-on: ubuntu-latest    
     steps:     
       - name: Extract change reason from pull request body 
@@ -95,8 +93,8 @@ jobs:
 
       - name: Print extracted results
         run: |
-          echo ## Motivo da mudança 
-          echo ${{ steps.change-reason-regex.outputs.group1 }}
+          echo "## Motivo da mudança" 
+          echo "${{ steps.change-reason-regex.outputs.group1 }}"
 
-          echo ## Links das demandas que estão sendo resolvidas com a mudança 
-          echo ${{ steps.card-link-regex.outputs.group1 }}
+          echo "## Links das demandas que estão sendo resolvidas com a mudança" 
+          echo "${{ steps.card-link-regex.outputs.group1 }}"
