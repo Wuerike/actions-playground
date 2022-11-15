@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## <small>4.4.4 (2022-11-15)</small>
+
+* fix regex test action ([ab21208](https://github.com/Wuerike/actions-playground/commit/ab21208))
+* fix regex test action ([b0abdd2](https://github.com/Wuerike/actions-playground/commit/b0abdd2))
+* Merge branch 'master' into develop ([91e0e9b](https://github.com/Wuerike/actions-playground/commit/91e0e9b))
+* Merge branch 'master' into realease/v1.4.0 ([6e8642a](https://github.com/Wuerike/actions-playground/commit/6e8642a))
+* Merge pull request #15 from Wuerike/feat/Add-js-action ([e610446](https://github.com/Wuerike/actions-playground/commit/e610446)), closes [#15](https://github.com/Wuerike/actions-playground/issues/15)
+* Merge pull request #6 from Wuerike/realease/v1.4.0 ([b3c8b62](https://github.com/Wuerike/actions-playground/commit/b3c8b62)), closes [#6](https://github.com/Wuerike/actions-playground/issues/6)
+* Merge pull request #7 from Wuerike/realease/v1.4.0 ([4b3ad8e](https://github.com/Wuerike/actions-playground/commit/4b3ad8e)), closes [#7](https://github.com/Wuerike/actions-playground/issues/7)
+* remove if from regex test action ([00cfa89](https://github.com/Wuerike/actions-playground/commit/00cfa89))
+* test ([5a9faf3](https://github.com/Wuerike/actions-playground/commit/5a9faf3))
+* test push tag flag ([9f5f8c6](https://github.com/Wuerike/actions-playground/commit/9f5f8c6))
+* test regex extractor ([a0653b4](https://github.com/Wuerike/actions-playground/commit/a0653b4))
+* test version as optional ([1768ee6](https://github.com/Wuerike/actions-playground/commit/1768ee6))
+* teste input version description ([90cd0d3](https://github.com/Wuerike/actions-playground/commit/90cd0d3))
+* update action ([e15a38f](https://github.com/Wuerike/actions-playground/commit/e15a38f))
+* update action ([6195303](https://github.com/Wuerike/actions-playground/commit/6195303))
+* update action ([7a9853d](https://github.com/Wuerike/actions-playground/commit/7a9853d))
+* update action ([bc4f090](https://github.com/Wuerike/actions-playground/commit/bc4f090))
+* update action ([9573a5c](https://github.com/Wuerike/actions-playground/commit/9573a5c))
+* update action ([165738e](https://github.com/Wuerike/actions-playground/commit/165738e))
+* update input version description ([1944c5e](https://github.com/Wuerike/actions-playground/commit/1944c5e))
+* Update standard-version.yaml ([e1ae9e8](https://github.com/Wuerike/actions-playground/commit/e1ae9e8))
+* Update standard-version.yaml ([700464a](https://github.com/Wuerike/actions-playground/commit/700464a))
+* Update standard-version.yaml ([5245690](https://github.com/Wuerike/actions-playground/commit/5245690))
+* feat: Add base action ([0f86c03](https://github.com/Wuerike/actions-playground/commit/0f86c03))
+* feat: Add js action ([17ecf06](https://github.com/Wuerike/actions-playground/commit/17ecf06))
+* feat: feat 7 ([9b528bd](https://github.com/Wuerike/actions-playground/commit/9b528bd))
+* fix: Change action version ([42abad4](https://github.com/Wuerike/actions-playground/commit/42abad4))
+* fix: Update actions checkout ([04451d8](https://github.com/Wuerike/actions-playground/commit/04451d8))
+* chore(release): 1.3.0 (#4) ([0cbc4d4](https://github.com/Wuerike/actions-playground/commit/0cbc4d4)), closes [#4](https://github.com/Wuerike/actions-playground/issues/4)
+
+
+
 ## [1.4.0](https://github.com/Wuerike/actions-playground/compare/v1.2.0...v1.4.0) (2022-02-03)
 
 
