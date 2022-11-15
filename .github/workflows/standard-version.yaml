@@ -1,23 +1,21 @@
-name: Standard Version
+name: Create Release Branch
 
 on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'The version you want to release.'
+        description: "The version you want to release."
         required: false
 
 jobs:
-
-  create-release:
+  create-release-branch:
     runs-on: ubuntu-latest
-    name: Standard Version
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - uses: Wuerike/standard-version-release-branch@fix/Resolve-unsafe-directory
+      - uses: Wuerike/js-action-teste@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_version: ${{ github.event.inputs.version }}
@@ -25,3 +23,4 @@ jobs:
           target_branch: master
           as_draft: true
           push_tag: false
+          pr_template: "PR opened by [standard-version-release-branch](https://github.com/Wuerike/standard-version-release-branch)"
