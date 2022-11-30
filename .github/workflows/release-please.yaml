@@ -12,3 +12,5 @@ jobs:
         with:
           release-type: python
           package-name: release-please-action
+          default-branch: develop
+
