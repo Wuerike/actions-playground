@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/Wuerike/actions-playground/compare/v1.4.0...v1.5.0) (2022-11-30)
+
+
+### Features
+
+* Add base action ([0f86c03](https://github.com/Wuerike/actions-playground/commit/0f86c03ab4c1026ebc1bb87b5c2608be98041359))
+* Add js action ([17ecf06](https://github.com/Wuerike/actions-playground/commit/17ecf06bec8af39eec3f1b1581f16398583b8cbf))
+* Add v1 ([d9d5ad6](https://github.com/Wuerike/actions-playground/commit/d9d5ad65adcf7993c39cdbfa02bc6ce8ac72de4b))
+* feat 7 ([9b528bd](https://github.com/Wuerike/actions-playground/commit/9b528bdbcedfe5b69d8a508472b4cc3dbc20c484))
+
+
+### Bug Fixes
+
+* Change action version ([42abad4](https://github.com/Wuerike/actions-playground/commit/42abad4266673abcb6f5a11ea871e885f9e6836a))
+* Update actions checkout ([04451d8](https://github.com/Wuerike/actions-playground/commit/04451d8d18412e15701e001f9ae453a53fc544b0))
+
 ## [1.4.0](https://github.com/Wuerike/actions-playground/compare/v1.2.0...v1.4.0) (2022-02-03)
 
 
