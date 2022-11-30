@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/Wuerike/actions-playground/compare/v1.5.0...v1.6.0) (2022-11-30)
+
+
+### Features
+
+* Adição numero 1 ([36d43c4](https://github.com/Wuerike/actions-playground/commit/36d43c4374439b1ccba9c7927f93450630c4ff6d))
+* Adição numero 2 ([46a62f8](https://github.com/Wuerike/actions-playground/commit/46a62f84d6f1df52e9f3502ce919d95fdbf3a3b7))
+
+
+### Bug Fixes
+
+* **1111:** Correção numero 1 ([7b1051b](https://github.com/Wuerike/actions-playground/commit/7b1051b0239555833641de9bb26f9855a4028403))
+* **333333:** Correção numero 3 ([49dee68](https://github.com/Wuerike/actions-playground/commit/49dee689784c534665ca49da2b107e1cac736fde))
+* Correção numero 2 ([6556fb4](https://github.com/Wuerike/actions-playground/commit/6556fb4d4bcdafb62adc4f2085a9d659fc8ba043))
+
 ## [1.5.0](https://github.com/Wuerike/actions-playground/compare/v1.4.0...v1.5.0) (2022-11-30)
 
 
