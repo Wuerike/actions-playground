@@ -36,7 +36,7 @@ jobs:
         id: change-reason-regex
         with:
           text: ${{ github.event.pull_request.body }}
-          regex: '(## Descrições das alterações[\s\S]*?)(?=<!-- auditing-block start -->)'
+          regex: '(?<=descricao:)([\s\S]*)(?=link_para_card)'
 
       - name: Create Github Release
         id: create-github-release
@@ -50,8 +50,7 @@ jobs:
           draft: false
           prerelease: false
           body: |
-            ## Motivo da mudança ${{ steps.change-reason-regex.outputs.group1 }}
-            ## Links das demandas que estão sendo resolvidas com a mudança ${{ steps.card-link-regex.outputs.group1 }}
+            ${{ steps.change-reason-regex.outputs.group1 }}
 
       - name: 'Create PR: Merge main into develop branch'
         id: create-develop-pull-request
