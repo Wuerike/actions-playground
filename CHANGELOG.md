@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/Wuerike/actions-playground/compare/v1.1.0...v1.2.0) (2025-04-15)
+
+
+### Features
+
+* Feature da v1.2.0 ([f3b4d58](https://github.com/Wuerike/actions-playground/commit/f3b4d58459e241c36c57c5f12564d3a4623b05ef))
+
 ## [1.1.0](https://github.com/Wuerike/actions-playground/compare/vv1.0.0...v1.1.0) (2025-04-15)
 
 # Changelog
