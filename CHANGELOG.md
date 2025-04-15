@@ -3,10 +3,11 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 
+## [5.0.0](https://github.com/Wuerike/actions-playground/compare/v2.0.0...v5.0.0) (2025-04-15)
+
 ## [4.0.0](https://github.com/Wuerike/actions-playground/compare/v2.0.0...v4.0.0) (2025-04-15)
 
 ## [3.0.0](https://github.com/Wuerike/actions-playground/compare/v2.0.0...v3.0.0) (2025-04-15)
-
 
 ## [2.0.0](https://github.com/Wuerike/actions-playground/compare/v1.5.0...v2.0.0) (2025-04-15)
 
@@ -14,9 +15,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.4.0](https://github.com/Wuerike/actions-playground/compare/v1.2.0...v1.4.0) (2025-04-15)
 
-
 ## [1.3.0](https://github.com/Wuerike/actions-playground/compare/v1.2.0...v1.3.0) (2025-04-15)
-
 
 ## [1.2.0](https://github.com/Wuerike/actions-playground/compare/v1.1.0...v1.2.0) (2025-04-15)
 
