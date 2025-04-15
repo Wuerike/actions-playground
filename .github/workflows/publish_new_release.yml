@@ -38,6 +38,14 @@ jobs:
           text: ${{ github.event.pull_request.body }}
           regex: '(## Descrições das alterações[\s\S]*?)(?=<!-- auditing-block start -->)'
 
+      - name: Format images as links
+        uses: actions-ecosystem/action-regex-replace@v2
+        id: images-as-links
+        with:
+          text: ${{ steps.change-reason-regex.outputs.group1 }}
+          regex: '!\[[^\]]*\]\((.*?)\)'
+          replace: '$1'
+
       - name: Create Github Release
         id: create-github-release
         uses: thomaseizinger/create-release@1.0.0
@@ -50,7 +58,7 @@ jobs:
           draft: false
           prerelease: false
           body: |
-            ${{ steps.change-reason-regex.outputs.group1 }}
+            ${{ steps.images-as-links.outputs.text }}
 
       - name: 'Create PR: Merge main into develop branch'
         id: create-develop-pull-request
