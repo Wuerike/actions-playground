@@ -31,20 +31,17 @@ jobs:
 
           echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
 
-      - name: Extract change reason from pull request body 
-        uses: actions-ecosystem/action-regex-match@v2.0.2
-        id: change-reason-regex
+      - name: Extract change reason from pull request body
+        id: change-reason
+        uses: actions/github-script@v7
         with:
-          text: ${{ github.event.pull_request.body }}
-          regex: '(## Descrições das alterações[\s\S]*?)(?=<!-- auditing-block start -->)'
-
-      - name: Format images as links
-        uses: actions-ecosystem/action-regex-replace@v2
-        id: images-as-links
-        with:
-          text: ${{ steps.change-reason-regex.outputs.group1 }}
-          regex: '!\[[^\]]*\]\((.*?)\)'
-          replace: '$1'
+          script: |
+            const body = `${{ github.event.pull_request.body }}`;
+            const match = body.match(/## Descrições das alterações([\s\S]*?)(?=<!-- auditing-block start -->)/);
+            let text = match ? match[0] : '';
+            // Format images as links
+            text = text.replace(/!\[[^\]]*\]\((.*?)\)/g, '$1');
+            core.setOutput('text', text);
 
       - name: Create Github Release
         id: create-github-release
@@ -58,7 +55,7 @@ jobs:
           draft: false
           prerelease: false
           body: |
-            ${{ steps.images-as-links.outputs.text }}
+            ${{ steps.change-reason.outputs.text }}
 
       - name: 'Create PR: Merge main into develop branch'
         id: create-develop-pull-request
