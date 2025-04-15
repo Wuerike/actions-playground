@@ -1,0 +1,62 @@
+name: "Draft new release"
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "The version you want to release."
+        required: false
+
+jobs:
+  draft-new-release:
+    name: "Draft a new release"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: Wuerike/standard-version-release-branch@v1.2.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          release_version: ${{ github.event.inputs.version }}
+          origin_branch: develop
+          target_branch: main
+          as_draft: true
+          push_tag: false
+          pr_template: |
+            ## Descrições das alterações
+
+            ### Alteração 1
+
+            - Titulo:
+            - Link:
+            - Descrição do teste:
+            - Evidências:
+
+            ### Alteração N
+
+            - Titulo:
+            - Link:
+            - Descrição do teste:
+            - Evidências:
+
+            <!-- auditing-block start -->
+            <!-- Não modificar manualmente a estrutura do bloco abaixo! -->
+
+            ## **Repositório Auditado**
+
+            Preencha abaixo as informações referentes a mudança que está sendo submetida. Os campos o prefixo [opcional] não são obrigatórios de serem preenchidos.
+
+            Você pode consultar mais informações sobre como preencher cada campo do Pull Request Template através [desse documento](https://mundipagg.atlassian.net/wiki/spaces/FOUND/pages/6347981053/Fluxo+para+deploy+de+aplica+es+auditadas+utilizando+GitHub+Actions#Como-preencher-os-campos-obrigat%C3%B3rios-na-abertura-de-um-Pull-Request) no Confluence.
+
+            ```yml
+            categoria: application_software
+            descricao_da_mudanca: actions-playground vX.Y.Z
+            objetivo_da_mudanca: deploy das alterações descritas no PR
+            plano_de_teste:  Teste local + testes unitários + validação em stg
+            plano_de_rollback: Revert do PR de release
+            [opcional] link_do_card_no_jira: 
+            [opcional] id_do_incidente_opsgenie: 
+            ```
+            <!-- auditing-block end -->
