@@ -36,7 +36,7 @@ jobs:
         id: change-reason-regex
         with:
           text: ${{ github.event.pull_request.body }}
-          regex: '(?<=descricao:)([\s\S]*)(?=link_para_card)'
+          regex: '(## Descrições das alterações[\s\S]*?)(?=<!-- auditing-block start -->)'
 
       - name: Create Github Release
         id: create-github-release
