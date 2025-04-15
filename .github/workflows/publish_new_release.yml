@@ -39,12 +39,13 @@ jobs:
           regex: '(## Descrições das alterações[\s\S]*?)(?=<!-- auditing-block start -->)'
 
       - name: Format images as links
-        uses: actions-ecosystem/action-regex-replace@v2
         id: images-as-links
+        uses: actions/github-script@v7
         with:
-          text: ${{ steps.change-reason-regex.outputs.group1 }}
-          regex: '!\[[^\]]*\]\((.*?)\)'
-          replace: '$1'
+          script: |
+            const input = `${{ steps.change-reason-regex.outputs.group1 }}`;
+            const output = input.replace(/!\[[^\]]*\]\((.*?)\)/g, '$1');
+            core.setOutput('text', output);
 
       - name: Create Github Release
         id: create-github-release
