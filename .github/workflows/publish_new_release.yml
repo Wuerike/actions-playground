@@ -50,8 +50,7 @@ jobs:
           draft: false
           prerelease: false
           body: |
-            ## Motivo da mudança ${{ steps.change-reason-regex.outputs.group1 }}
-            ## Links das demandas que estão sendo resolvidas com a mudança ${{ steps.card-link-regex.outputs.group1 }}
+            ${{ steps.change-reason-regex.outputs.group1 }}
 
       - name: 'Create PR: Merge main into develop branch'
         id: create-develop-pull-request
